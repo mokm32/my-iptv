@@ -1,9 +1,7 @@
-const fetch = require("node-fetch");
-
 exports.handler = async (event) => {
   const { username, password, type, output } = event.queryStringParameters || {};
 
-  // Username & password yang kamu tentukan
+  // Username & password kamu
   const validUser = "user123";
   const validPass = "pass123";
 
@@ -15,10 +13,11 @@ exports.handler = async (event) => {
   }
 
   try {
-    // Link M3U kamu (ubah sesuai link Netlify / GitHub)
-    const url = "https://myplaylist3.netlify.app/.netlify/functions/playlist?token=abc123";
+    // Link M3U kamu di Netlify/GitHub/hosting
+    const url = "httphttps://myplaylist3.netlify.app/.netlify/functions/playlist?token=abc123";
+
     const response = await fetch(url);
-    if (!response.ok) throw new Error("Fetch failed");
+    if (!response.ok) throw new Error("Failed to fetch playlist");
 
     const data = await response.text();
 
