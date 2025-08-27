@@ -1,11 +1,11 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
-export async function handler(event) {
-  const { username, password, type, output } = event.queryStringParameters;
+exports.handler = async (event) => {
+  const { username, password, type, output } = event.queryStringParameters || {};
 
   // Username & password yang kamu tentukan
-  const validUser = user123";
-  const validPass = "user123";
+  const validUser = "user123";
+  const validPass = "pass123";
 
   if (username !== validUser || password !== validPass) {
     return {
@@ -33,5 +33,4 @@ export async function handler(event) {
   } catch (err) {
     return { statusCode: 500, body: "Server error: " + err.message };
   }
-}
-
+};
