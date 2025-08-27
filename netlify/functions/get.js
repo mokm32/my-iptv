@@ -4,8 +4,8 @@ export async function handler(event) {
   const { username, password, type, output } = event.queryStringParameters;
 
   // Username & password yang kamu tentukan
-  const validUser = nj123";
-  const validPass = "nj123";
+  const validUser = user123";
+  const validPass = "user123";
 
   if (username !== validUser || password !== validPass) {
     return {
@@ -34,3 +34,4 @@ export async function handler(event) {
     return { statusCode: 500, body: "Server error: " + err.message };
   }
 }
+
